@@ -1,0 +1,58 @@
+<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+	<modelVersion>4.0.0</modelVersion>
+	<groupId>fr.cdestombes.sonar</groupId>
+	<artifactId>sonarCheckS2441</artifactId>
+	<version>1.0.0-SNAPSHOT</version>
+	<name>sonarCheckS2441</name>
+	<packaging>pom</packaging>
+	<description>Simple maven multi-project demonstrate a failed for Sonar Java S2441 with error like "org.sonar.java.resolve.Symbols$UnknownType@74d9668" serializable or don't store it in the session.</description>
+
+	<modules>
+		<module>modules/sonar_S2441_subproject_1</module>
+		<module>modules/sonar_S2441_subproject_2</module>
+	</modules>
+
+	<properties>
+		<project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
+	</properties>
+
+	<build>
+		<sourceDirectory>src/main/java</sourceDirectory>
+
+		<plugins>
+            <!-- build { -->
+            <plugin>
+                <groupId>org.apache.maven.plugins</groupId>
+                <artifactId>maven-compiler-plugin</artifactId>
+                <version>3.8.1</version>
+                <configuration>
+                    <release>13</release>
+                    <source>13</source>
+                    <target>13</target>
+                    <encoding>UTF-8</encoding>
+                </configuration>
+            </plugin>
+            <!-- } build -->
+
+            <!-- sonar { -->
+            <plugin>
+                <groupId>org.sonarsource.scanner.maven</groupId>
+                <artifactId>sonar-maven-plugin</artifactId>
+                <version>3.7.0.1746</version>
+            </plugin>
+            <!-- } sonar -->
+        </plugins>
+    </build>
+	
+	<dependencies>
+        <!-- Java EE { -->
+		<dependency>
+		    <groupId>javax</groupId>
+		    <artifactId>javaee-api</artifactId>
+		    <version>8.0.1</version>
+		    <scope>provided</scope>
+		</dependency>
+        <!-- } Java EE -->
+	</dependencies>
+</project>

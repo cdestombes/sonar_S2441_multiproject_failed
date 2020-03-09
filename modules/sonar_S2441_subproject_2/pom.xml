@@ -1,0 +1,22 @@
+<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+	<modelVersion>4.0.0</modelVersion>
+	<parent>
+		<groupId>fr.cdestombes.sonar</groupId>
+		<artifactId>sonarCheckS2441</artifactId>
+		<version>1.0.0-SNAPSHOT</version>
+		<relativePath>../../pom.xml</relativePath>
+	</parent>
+	<groupId>fr.cdestombes.sonar</groupId>
+	<artifactId>sonarCheckS2441SubProject2</artifactId>
+	<version>1.0.0-SNAPSHOT</version>
+	<name>sonarCheckS2441SubProject1</name>
+
+	<dependencies>
+		<dependency>
+			<groupId>fr.cdestombes.sonar</groupId>
+			<artifactId>sonarCheckS2441SubProject1</artifactId>
+			<version>1.0.0-SNAPSHOT</version>
+		</dependency>
+	</dependencies>
+</project>
